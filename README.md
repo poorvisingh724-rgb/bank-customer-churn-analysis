@@ -38,11 +38,11 @@ The cleaned analytical output is saved as `cleaned_bank_churn.csv`.
 
 ### Grain
 
-One row per customer in the final analytical dataset, identified by `CustomerId`.
+**One row per customer** in the final analytical dataset, identified by `CustomerId`.
 
 ### Time Span
 
-Not available in the source data. The dataset contains no date/timestamp field, so this project evaluates customer attributes and churn status rather than churn trends over time.
+**Not available in the source data.** The dataset contains no date/timestamp field, so this project evaluates customer attributes and churn status rather than churn trends over time.
 
 ### Volume
 
@@ -113,9 +113,9 @@ The resulting cleaned dataset contains **10,000 rows and 15 columns**, with **0 
 
 Churn was analyzed using group-level counts and churn rates. This approach was chosen because the project is focused on explaining **where churn is concentrated** and producing business-readable segment insights rather than building a predictive model.
 
-* Overall churn rate: direct count-and-rate calculation to establish the size of the retention problem.
-* Geography, age, activity, products, and credit score: grouped churn-rate comparisons to make differences between customer segments easy to interpret.
-* Account balance: distribution comparison between retained and churned customers to assess whether financial value may be associated with churn.
+* **Overall churn rate:** direct count-and-rate calculation to establish the size of the retention problem.
+* **Geography, age, activity, products, and credit score:** grouped churn-rate comparisons to make differences between customer segments easy to interpret.
+* **Account balance:** distribution comparison between retained and churned customers to assess whether financial value may be associated with churn.
 * **High-risk segmentation:** combinations of geography, age group, activity status, and product count were evaluated, with a minimum segment size of 50 customers to reduce the chance of over-interpreting very small groups.
 
 No predictive machine-learning model was used in this phase because the stated objectives are descriptive and diagnostic: identify patterns, quantify segment risk, and turn those patterns into retention actions.
@@ -182,7 +182,7 @@ The `<500` credit-score group has the highest observed churn rate at **23.73%**,
 | Retained        |       72,745.30 |      92,072.68 |
 | Churned         |   **91,108.54** | **109,349.29** |
 
-What it means: churn is not necessarily limited to low-balance customers. Retention teams should consider value at risk as well as churn probability when prioritizing outreach.
+**What it means:** churn is not necessarily limited to low-balance customers. Retention teams should consider **value at risk** as well as churn probability when prioritizing outreach.
 
 ### 8. High-risk combinations are more informative than single variables alone
 
@@ -190,12 +190,12 @@ Among segments with at least 50 customers, the highest observed churn rates incl
 
 | Geography | Age   | Activity | Products | Customers | Churn Rate |
 | --------- | ----- | -------- | -------: | --------: | ---------: |
-| Germany   | 50+   | Inactive |        1 |       126 | 88.89% |
-| France    | 50+   | Inactive |        1 |       148 | 87.16% |
-| Spain     | 50+   | Inactive |        1 |        52 | 82.69% |
-| Germany   | 40–49 | Inactive |        1 |       247 | 64.37% |
+| Germany   | 50+   | Inactive |        1 |       126 | **88.89%** |
+| France    | 50+   | Inactive |        1 |       148 | **87.16%** |
+| Spain     | 50+   | Inactive |        1 |        52 | **82.69%** |
+| Germany   | 40–49 | Inactive |        1 |       247 | **64.37%** |
 
-What it means: combinations of age, geography, engagement, and product ownership can isolate much higher-risk groups than broad population averages.
+**What it means:** combinations of age, geography, engagement, and product ownership can isolate much higher-risk groups than broad population averages.
 
 ## Recommendations
 
@@ -207,12 +207,12 @@ What it means: combinations of age, geography, engagement, and product ownership
 | Review unusual product combinations  | Product / Customer Experience           | 82.71% churn for 3 products and 100% for 4 products       | Audit those segments first for product-fit issues, customer dissatisfaction, operational problems, and data anomalies; avoid broad cross-selling based on this result alone. |
 | Protect high-value customers at risk | Relationship Managers / Premium Banking | Churned customers have higher average and median balances | Combine churn indicators with balance to identify financially important customers for proactive relationship-manager intervention.                                           |
 
-> Decision principle: prioritize customers by a combination of churn risk and value at risk, not churn rate alone.
+> **Decision principle:** prioritize customers by a combination of **churn risk and value at risk**, not churn rate alone.
 
 ## Limitations & Assumptions
 
-* The dataset has no date field, so this analysis cannot explain when churn occurred, whether churn is accelerating, or how retention changed over time.
-* The analysis is descriptive. The observed relationships are associations, not evidence that age, geography, inactivity, credit score, balance, or product count causes churn.
+* The dataset has **no date field**, so this analysis cannot explain when churn occurred, whether churn is accelerating, or how retention changed over time.
+* The analysis is **descriptive**. The observed relationships are associations, not evidence that age, geography, inactivity, credit score, balance, or product count causes churn.
 * Customer satisfaction, complaints, service interactions, pricing, competitor activity, tenure history, and marketing-contact history are not available, limiting root-cause analysis.
 * The extreme churn rates in the 3- and 4-product groups occur in relatively small populations (266 and 60 customers respectively), so those groups should be investigated and validated before being used for broad policy decisions.
 * Missing age and invalid salary placeholders were imputed using medians; this preserves the dataset for analysis but may reduce uncertainty visible in those fields.
@@ -242,6 +242,7 @@ bank-churn-analysis/
 └── .gitignore
 ```
 
- Project Status
 
-Next phase: Power BI dashboard and interactive storytelling layer.
+## Project Status
+
+**Next phase:** Power BI dashboard and interactive storytelling layer.
